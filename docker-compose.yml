@@ -1,0 +1,14 @@
+geoserver:
+ image: kartoza/geoserver 
+ ports:
+  - "8080:8080"
+ #networks:
+ # - default 
+ links:
+  - "db"
+db:
+ image: ppensier/postgis
+ #ports:
+ # - "5432:5432"
+ #networks:
+ # - default
