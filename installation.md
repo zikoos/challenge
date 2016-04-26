@@ -9,7 +9,39 @@ Pour les prérequis, référez vous au fichier d'introduction.
 
 
 
-## KeepAlived
+# keepalived config
+
+    vrrp_instance VI_1 {
+        state MASTER
+        interface eth0
+        virtual_router_id 51
+        priority 150
+        advert_int 1
+        authentication {
+        auth_type PASS
+        auth_pass $ place secure password here.
+         }
+         virtual_ipaddress {
+             127.31.40.67
+        }
+    }
+
+
+
+
+# Lancer keepalived
+
+pour lancer keepalived, on ajuste les paramètres :
+
+
+    --net=host
+    --cap-add=NET_ADMIN
+    --name keepalived0 (optionally)
+
+
+> docker run -d  --net=host --privileged=true --name keepalived1 -e affinity:container==haproxy1 -e VIP=192.168.0.155 keepalived
+
+
 
 
 
