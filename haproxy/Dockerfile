@@ -1,5 +1,6 @@
 FROM ubuntu
-
+ENV http_proxy 'http://10.0.4.2:3128'
+ENV https_proxy 'http://10.0.4.2:3128'
 # Install Haproxy.
 RUN \
   sed -i 's/^# \(.*-backports\s\)/\1/g' /etc/apt/sources.list && \
@@ -24,3 +25,6 @@ CMD ["bash", "/haproxy-start"]
 # Expose ports.
 EXPOSE 80
 EXPOSE 443
+
+f
+
