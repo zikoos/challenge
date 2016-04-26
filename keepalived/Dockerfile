@@ -1,20 +1,12 @@
-FROM ubuntu:14.04.4 
+FROM fedora:21
+
 MAINTAINER TSI
-ENV http_proxy 'http://10.0.4.2:3128'
-ENV https_proxy 'http://10.0.4.2:3128'
 
-RUN apt-get update -y && \
-  apt-get upgrade -y
+RUN yum install -y keepalived
 
-RUN apt-get install keepalived -y
+RUN echo "net.ipv4.ip_nonlocal_bind = 1" >> /etc/sysctl.conf
 
-ADD start_keep.sh /
-ADD ./keepalived.config /etc/keepalived/
-ADD config_keepalived.sh /
+COPY ./start_keep.sh /usr/local/sbin/start_keep.sh
+RUN chmod u+x /usr/local/sbin/start_keep.sh
 
-RUN chmod +x /config_keepalived.sh
-RUN chmod +x /start_keep.sh
-
-#startup script
-
-ENTRYPOINT ["/start_keep.sh"]
+ENTRYPOINT [ "/bin/bash", "/usr/local/sbin/start_keep.sh" ]
