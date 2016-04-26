@@ -41,7 +41,7 @@ Cela générera une clé unique pour le cluster.
 
 Ajoutez ensuite les noeuds au cluster:
 
-`docker run -d swarm join --advertise 172.31.56.50 consul://172.31.40.67:8500`
+`docker run -d swarm join --advertise 172.31.56.50:2375 consul://172.31.40.67:8500`
 
 Démarrez le manager: 
 
@@ -65,7 +65,7 @@ Le lancement se fait simplement via la commande :
 Après avoir lancé la commande docker-compose, on peut désormais se rendre sur la page: 
 * http://127.0.0.1:8080/geoserver
 * login: admin, password: geoserver
-* ajouter un nouveau workspace
+* ajouter un nouveau workspace (choisir WMTS et WMS pour la diffusion)
 * ajouter un nouvel entrepôt (une base postGis)
 	* nom de la base : db
 	* hostname : adresse IP du conteneur postgis

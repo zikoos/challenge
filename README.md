@@ -6,25 +6,31 @@ Le but de ce projet est concevoir un SIG de type "cloud résilient", diffusant d
 
 ## Prérequis
 
-Vous devez tout d'abord disposer de 3 ordinateurs équipés de Linux, ainsi que de Docker sur chaque machine. Pour réaliser ce projet, nous n'avons eu recours à aucun Raspberry PI. Vous devez également avoir installé docker-compose sur toutes les machines. Pour la suite, référez vous au document installation.md
+Vous devez tout d'abord disposer de 3 ordinateurs équipés de Linux, ainsi que de Docker sur chaque machine. Pour réaliser ce projet, nous n'avons eu recours à aucun Raspberry PI. Vous devez également avoir installé docker-compose sur toutes les machines. Pour la suite, référez vous au document installation.md.
 
 ## Choix techniques
 
-choix techniques à détailler ...
+Pour répondre à ce besoin, nous avons mis en place les outils suivants:
+* 3 machines Linux (un manager et deux esclaves), l'application doit en effet être résiliante
+* postgresql et son extension spatiale postgis pour stocker les données géographiques
+* geoserver pour publier les données géographiques
+* PGpool pour assurer la duplication des données dans chacun des noeuds.
+* HAproxy pour le rôle de Load Balancer
+* Keepalived pour la répartition de charge et pour la haute disponibilité
+* L'outil Docker swarm pour administer le cluster
+* L'outil Consul pour ajouter les noeuds
 
-### Architecture logique
+### Architecture matérielle
 
-### Architecture administrative
+![materiel](../master/diagrammes/diagramme_materiel.png)
+
+### Architecture logicielle
+
+![materiel](../master/diagrammes/logiciel.png)
 
 ### Architecture physique
 
+![materiel](../master/diagrammes/admin.png)
 
-Now: two containers per node:
-
-* postgresql+postgis container for your database. Both are communicating together (binding).
-
-* geoserver container to publish your data
-
-These application could work on more than two material nodes, because the application is resilient (using haproxy and docker swarm tools).
 
 

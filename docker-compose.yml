@@ -6,8 +6,11 @@ geoserver:
  # - default 
  links:
   - "db"
+ #depends_on:
+
 db:
- image: ppensier/postgis
+ build: postgis/.
+ #image: ppensier/postgis
  #ports:
  # - "5432:5432"
  #networks:
