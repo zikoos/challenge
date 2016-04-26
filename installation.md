@@ -53,7 +53,7 @@ Il ne reste plus qu'à modifier le Docker host pour exécutez les commandes Dock
 
 Grâce à consul "UI", nous pouvons visualiser le résultat:
 
-![consul](../diagrammes/consul.png)
+![consul](../master/diagrammes/consul.png)
 
 ## Lancement du projet
 
@@ -73,7 +73,7 @@ Après avoir lancé la commande docker-compose, on peut désormais se rendre sur
 	* passwd : postgres
 * il ne reste plus qu'à publier la couche, cocher au passage compute from native bounds
 
-![result](../diagrammes/result.png)
+![result](../master/diagrammes/result.png)
 
 
 
