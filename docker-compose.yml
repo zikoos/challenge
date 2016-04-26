@@ -15,17 +15,17 @@ db:
  # - "5432:5432"
  #networks:
  # - default
- pgpool:
-  image:zakaria0086/pgpool
-  ports:
-    - "15432:5432"
-  networks:
-   - default
+pgpool:
+ image:zakaria0086/pgpool
+ ports:
+  - "15432:5432"
+ networks:
+  - default
   
- haproxy:
-  image: zakaria086/haproxy
-   ports:
-    -  "80:80"
-    -  "8888:8080"
-   networks:
-    - default
+haproxy:
+ image: zakaria086/haproxy
+ ports:
+  -  "80:80"
+  -  "8888:8080"
+ networks:
+  - default
