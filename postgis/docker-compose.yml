@@ -1,0 +1,28 @@
+geoserver1:
+ image: kartoza/geoserver 
+ ports:
+  - "8080:8080"
+ links:
+  - "db1"
+ #networks:
+ # - default 
+
+db1:
+ build: postgis/.
+ #networks:
+ # - default
+
+geoserver2:
+ image: kartoza/geoserver 
+ ports:
+  - "8080:8080"
+ links:
+  - "db2"
+ #networks:
+ # - default 
+
+db2:
+ build: postgis/.
+ #networks:
+ # - default
+
