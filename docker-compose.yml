@@ -16,7 +16,7 @@ db:
  #networks:
  # - default
 pgpool:
- image:zakaria0086/pgpool
+ image: zakaria0086/pgpool
  ports:
   - "15432:5432"
  networks:
