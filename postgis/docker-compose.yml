@@ -4,13 +4,13 @@ geoserver1:
   - "8080:8080"
  links:
   - "db1"
- #networks:
- # - default 
+ networks:
+  - default 
 
 db1:
  build: postgis/.
- #networks:
- # - default
+ networks:
+  - default
 
 geoserver2:
  image: kartoza/geoserver 
@@ -18,11 +18,21 @@ geoserver2:
   - "8080:8080"
  links:
   - "db2"
- #networks:
- # - default 
+ networks:
+  - default 
 
 db2:
  build: postgis/.
- #networks:
- # - default
+ networks:
+  - default
+
+haproxy1:
+  build: haproxy/.
+ networks:
+  - default
+
+haproxy2:
+  build: haproxy/.
+ networks:
+  - default
 
