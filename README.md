@@ -2,7 +2,7 @@
 
 ---------------------------------------------------------------------------------------------------
 
-Le but de ce projet est concevoir un SIG de type "cloud résilient", diffusant de la données géographique de manuère résilente. Ce projet a été réalisé par Philémon Pensier et Zakaria Ait-Omar, élèves de l'école nationale des sciences géographiques (ENSG) dans le cadre du master TSI (Technologies des Systèmes d'Information).
+Le but de ce projet est concevoir un SIG de type "cloud résilient", diffusant de la données géographique de manuère résilente. Ce projet a été réalisé par Philémon Pensier et Zak, élèves de l'école nationale des sciences géographiques (ENSG) dans le cadre du master TSI (Technologies des Systèmes d'Information).
 
 ## Prérequis
 
