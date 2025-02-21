@@ -23,7 +23,7 @@ pgpool:
   - default
   
 haproxy:
- image: zakaria086/haproxy
+ image: zakaria0086/haproxy
  ports:
   -  "80:80"
   -  "8888:8080"
